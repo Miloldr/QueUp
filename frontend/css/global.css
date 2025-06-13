@@ -94,6 +94,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 4rem;
+    flex-wrap: wrap;
 }
 
 .feature {
@@ -103,6 +104,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 300px;
+    flex: 0 1 300px;
     transition: all 0.3s ease;
 }
 
@@ -116,4 +118,70 @@ body {
     font-weight: 700;
     color: #2d3748;
     margin-bottom: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .features-list {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .features-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .feature {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .tagline {
+        font-size: 1.3rem;
+    }
+
+    .description {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .features {
+        padding: 30px 15px;
+    }
+
+    .features h2 {
+        font-size: 2rem;
+    }
+
+    .feature {
+        padding: 15px;
+    }
 }
