@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueUp Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>QueUp Demo</h1>
+            <p>Task Management Features Showcase</p>
+        </div>
+
+        <div id="status" class="status">
+            Not logged in
+        </div>
+
+        <div class="auth-section">
+            <div class="auth-box">
+                <h2>Register</h2>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="reg-email" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="reg-username" placeholder="username">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="reg-password" placeholder="password">
+                </div>
+                <button onclick="register()">Register</button>
+            </div>
+
+            <div class="auth-box">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="login-username" placeholder="username">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="login-password" placeholder="password">
+                </div>
+                <button onclick="login()">Login</button>
+                <button onclick="logout()" style="background: #6b7280; margin-left: 10px;">Logout</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="section">
+                <h2>Add Task</h2>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="task-title" placeholder="Task title">
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <input type="text" id="task-category" placeholder="Work, Personal, etc.">
+                </div>
+                <div class="form-group">
+                    <label>Type</label>
+                    <select id="task-type">
+                        <option value="Short term">Short term</option>
+                        <option value="Long term">Long term</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Difficulty</label>
+                    <select id="task-difficulty">
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Deadline</label>
+                    <input type="datetime-local" id="task-deadline">
+                </div>
+                <div class="form-group">
+                    <label>Note</label>
+                    <textarea id="task-note" placeholder="Optional note"></textarea>
+                </div>
+                <button onclick="addTask()">Add Task</button>
+            </div>
+
+            <div class="section">
+                <h2>Current Tasks</h2>
+                <button onclick="loadTasks()" class="btn-small">Refresh</button>
+                
+                <h3>Overdue</h3>
+                <div id="overdue-tasks" class="task-list"></div>
+                
+                <h3>Urgent</h3>
+                <div id="urgent-tasks" class="task-list"></div>
+                
+                <h3>Regular</h3>
+                <div id="regular-tasks" class="task-list"></div>
+            </div>
+
+            <div class="section full-width">
+                <h2>Completed Tasks</h2>
+                <button onclick="loadCompletedTasks()" class="btn-small">Load Completed</button>
+                <div id="completed-tasks" class="task-list"></div>
+            </div>
+
+            <div class="section full-width">
+                <h2>Settings</h2>
+                <div class="settings-grid">
+                    <div>
+                        <h3>Task Types</h3>
+                        <div id="task-types-settings"></div>
+                        <button onclick="loadSettings()" class="btn-small">Load Settings</button>
+                    </div>
+                    <div>
+                        <h3>Difficulties</h3>
+                        <div id="difficulties-settings"></div>
+                        <button onclick="updatePriorityOrder()" class="btn-small">Update Priority</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="demo.js"></script>
+</body>
+</html>

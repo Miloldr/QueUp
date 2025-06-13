@@ -1,4 +1,6 @@
 .env
 **/node_modules/
 **/__pycache__/
+**/tasks.db
+**/flask_session/
 .DS_Store
