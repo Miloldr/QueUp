@@ -6,7 +6,7 @@ function updateStatus(message) {
 }
 
 async function register() {
-    const email = document.getElementById('reg-email').value;a
+    const email = document.getElementById('reg-email').value;
     const username = document.getElementById('reg-username').value;
     const password = document.getElementById('reg-password').value;
     
